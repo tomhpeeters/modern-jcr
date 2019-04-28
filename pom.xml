@@ -188,6 +188,7 @@
                 <version>4.3.0</version>
                 <configuration>
                     <repoToken>0qRA5FeVk3qgCTsarjB6SDAsodZri3kXT</repoToken>
+                    <sourceEncoding>utf8</sourceEncoding>
                 </configuration>
             </plugin>
         </plugins>
