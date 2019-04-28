@@ -13,7 +13,7 @@ This library requires Java 8 or up.
 1. Add dependency to your project (For example maven:)
 ```
 <dependency>
-    <groupId>be.zwaldeck</groupId>
+    <groupId>com.github.zwaldeck</groupId>
     <artifactId>modernjcr</artifactId>
     <version>1.0.0</version>
 </dependency>

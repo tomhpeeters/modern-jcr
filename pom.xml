@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>be.zwaldeck</groupId>
+    <groupId>com.github.zwaldeck</groupId>
     <artifactId>modernjcr</artifactId>
     <version>1.0.0</version>
 
@@ -169,5 +169,13 @@
 
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-zwaldeck-Modern-JCR</id>
+            <name>zwaldeck-Modern-JCR</name>
+            <url>https://api.bintray.com/maven/zwaldeck/Modern-JCR/modern-jcr/;publish=1</url>
+        </repository>
+    </distributionManagement>
 
 </project>
