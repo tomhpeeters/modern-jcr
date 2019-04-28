@@ -64,8 +64,8 @@ class StreamVersionTest {
 
     @Test
     void getLinearSuccessor_success() throws Exception {
-        Version version = mock(Version.class);
-        when(versionMock.getLinearSuccessor()).thenReturn(version);
+        Version successor = mock(Version.class);
+        when(versionMock.getLinearSuccessor()).thenReturn(successor);
 
         assertNotNull(this.version.getLinearSuccessor());
     }
@@ -79,8 +79,8 @@ class StreamVersionTest {
 
     @Test
     void getSuccessors_success() throws Exception {
-        Version version = mock(Version.class);
-        when(versionMock.getSuccessors()).thenReturn(new Version[]{version, version});
+        Version successor = mock(Version.class);
+        when(versionMock.getSuccessors()).thenReturn(new Version[]{successor, successor});
 
         assertEquals(2, this.version.getSuccessors().length);
     }
@@ -94,8 +94,8 @@ class StreamVersionTest {
 
     @Test
     void getLinearPredecessor_success() throws Exception {
-        Version version = mock(Version.class);
-        when(versionMock.getLinearPredecessor()).thenReturn(version);
+        Version predecessors = mock(Version.class);
+        when(versionMock.getLinearPredecessor()).thenReturn(predecessors);
 
         assertNotNull(this.version.getLinearPredecessor());
     }
