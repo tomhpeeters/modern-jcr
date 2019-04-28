@@ -65,9 +65,9 @@ class StreamItemTest {
 
     @Test
     void getAncestor_success() throws Exception {
-        Item item = mock(Item.class);
-        when(item.getName()).thenReturn("name");
-        when(itemMock.getAncestor(anyInt())).thenReturn(item);
+        Item ancestor = mock(Item.class);
+        when(ancestor.getName()).thenReturn("name");
+        when(itemMock.getAncestor(anyInt())).thenReturn(ancestor);
 
         assertEquals("name", this.item.getAncestor(9).getName());
     }

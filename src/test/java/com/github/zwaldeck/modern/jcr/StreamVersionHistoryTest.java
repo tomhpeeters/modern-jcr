@@ -155,26 +155,26 @@ class StreamVersionHistoryTest {
     }
 
     @Test
-    void addVersionLabel_success() throws Exception{
+    void addVersionLabel_success() throws Exception {
         versionHistory.addVersionLabel("name", "label", false);
         verify(versionHistoryMock).addVersionLabel(anyString(), anyString(), anyBoolean());
     }
 
     @Test
-    void addVersionLabel_exception() throws Exception{
+    void addVersionLabel_exception() throws Exception {
         doThrow(RepositoryException.class).when(versionHistoryMock).addVersionLabel(anyString(), anyString(), anyBoolean());
 
         assertThrows(ModernJcrException.class, () -> versionHistory.addVersionLabel("name", "label", false));
     }
 
     @Test
-    void removeVersionLabel_success() throws Exception{
+    void removeVersionLabel_success() throws Exception {
         versionHistory.removeVersionLabel("label");
         verify(versionHistoryMock).removeVersionLabel(anyString());
     }
 
     @Test
-    void removeVersionLabel_exception() throws Exception{
+    void removeVersionLabel_exception() throws Exception {
         doThrow(RepositoryException.class).when(versionHistoryMock).removeVersionLabel(anyString());
 
         assertThrows(ModernJcrException.class, () -> versionHistory.removeVersionLabel("label"));
@@ -249,13 +249,13 @@ class StreamVersionHistoryTest {
     }
 
     @Test
-    void removeVersion_success() throws Exception{
+    void removeVersion_success() throws Exception {
         versionHistory.removeVersion("label");
         verify(versionHistoryMock).removeVersion(anyString());
     }
 
     @Test
-    void removeVersion_exception() throws Exception{
+    void removeVersion_exception() throws Exception {
         doThrow(RepositoryException.class).when(versionHistoryMock).removeVersion(anyString());
 
         assertThrows(ModernJcrException.class, () -> versionHistory.removeVersion("label"));

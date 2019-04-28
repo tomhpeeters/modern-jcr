@@ -291,14 +291,14 @@ class StreamNodeTest {
 
         when(nodeMock.setProperty(anyString(), any(BigDecimal.class))).thenReturn(property);
 
-        assertNotNull(node.setProperty("prop", new BigDecimal(5)));
+        assertNotNull(node.setProperty("prop", new BigDecimal("5")));
     }
 
     @Test
     void setProperty_bigDecimalValue_exception() throws Exception {
         when(nodeMock.setProperty(anyString(), any(BigDecimal.class))).thenThrow(RepositoryException.class);
 
-        assertThrows(ModernJcrException.class, () -> node.setProperty("prop", new BigDecimal(5)));
+        assertThrows(ModernJcrException.class, () -> node.setProperty("prop", new BigDecimal("5")));
     }
 
     @Test

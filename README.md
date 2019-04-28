@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/zwaldeck/modern-jcr/badge.svg)](https://coveralls.io/github/zwaldeck/modern-jcr)
 [![Javadocs](https://www.javadoc.io/badge/com.github.zwaldeck/modernjcr.svg?color=orange)](https://www.javadoc.io/doc/com.github.zwaldeck/modernjcr)
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[ ![Download](https://api.bintray.com/packages/zwaldeck/Modern-JCR/modern-jcr/images/download.svg) ](https://bintray.com/zwaldeck/Modern-JCR/modern-jcr/_latestVersion)
+[![Download](https://api.bintray.com/packages/zwaldeck/Modern-JCR/modern-jcr/images/download.svg) ](https://bintray.com/zwaldeck/Modern-JCR/modern-jcr/_latestVersion)
 
 ## License
 

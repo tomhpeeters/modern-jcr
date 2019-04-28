@@ -109,8 +109,8 @@ class StreamVersionTest {
 
     @Test
     void getPredecessors_success() throws Exception {
-        Version version = mock(Version.class);
-        when(versionMock.getPredecessors()).thenReturn(new Version[]{version, version});
+        Version predecessors = mock(Version.class);
+        when(versionMock.getPredecessors()).thenReturn(new Version[]{predecessors, predecessors});
 
         assertEquals(2, this.version.getPredecessors().length);
     }

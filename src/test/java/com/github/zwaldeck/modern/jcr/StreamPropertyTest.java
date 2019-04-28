@@ -135,7 +135,7 @@ class StreamPropertyTest {
 
     @Test
     void setValue_bigdecimalValue_success() throws Exception {
-        property.setValue(new BigDecimal(1L));
+        property.setValue(new BigDecimal("1"));
         verify(propertyMock).setValue(any(BigDecimal.class));
     }
 
@@ -143,7 +143,7 @@ class StreamPropertyTest {
     void setValue_bigdecimalValue_exception() throws Exception {
         doThrow(RepositoryException.class).when(propertyMock).setValue(any(BigDecimal.class));
 
-        assertThrows(ModernJcrException.class, () -> property.setValue(new BigDecimal(1L)));
+        assertThrows(ModernJcrException.class, () -> property.setValue(new BigDecimal("1")));
     }
 
     @Test
@@ -291,7 +291,7 @@ class StreamPropertyTest {
 
     @Test
     void getDecimal_success() throws Exception {
-        when(propertyMock.getDecimal()).thenReturn(new BigDecimal(1.5));
+        when(propertyMock.getDecimal()).thenReturn(new BigDecimal("1.5"));
 
         assertNotNull(property.getDecimal());
     }
@@ -348,8 +348,8 @@ class StreamPropertyTest {
 
     @Test
     void getProperty_success() throws Exception {
-        Property property = mock(Property.class);
-        when(propertyMock.getProperty()).thenReturn(property);
+        Property prop = mock(Property.class);
+        when(propertyMock.getProperty()).thenReturn(prop);
 
         assertNotNull(this.property.getProperty());
     }
