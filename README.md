@@ -4,6 +4,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/37a2aec520d34c03923b5b544c25405d)](https://www.codacy.com/app/zwaldeck/modern-jcr?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=zwaldeck/modern-jcr&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/zwaldeck/modern-jcr/badge.svg)](https://coveralls.io/github/zwaldeck/modern-jcr)
 [![Javadocs](https://www.javadoc.io/badge/com.github.zwaldeck/modernjcr.svg?color=orange)](https://www.javadoc.io/doc/com.github.zwaldeck/modernjcr)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.zwaldeck/modernjcr/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.zwaldeck/modernjcr)
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Download](https://api.bintray.com/packages/zwaldeck/Modern-JCR/modern-jcr/images/download.svg) ](https://bintray.com/zwaldeck/Modern-JCR/modern-jcr/_latestVersion)
 
