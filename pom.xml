@@ -6,7 +6,7 @@
 
     <groupId>com.github.zwaldeck</groupId>
     <artifactId>modernjcr</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>Modern JCR</name>
     <description>A Modern API to use JCR with Streams</description>
