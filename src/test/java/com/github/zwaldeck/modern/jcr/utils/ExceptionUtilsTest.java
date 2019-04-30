@@ -1,15 +1,19 @@
 package com.github.zwaldeck.modern.jcr.utils;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class ExceptionUtilsTest {
+
+class ExceptionUtilsTest {
 
     private static void throwException() throws Exception {
         throw new Exception("some checked exception");
@@ -24,35 +28,40 @@ public class ExceptionUtilsTest {
     }
 
     @Test
-    public void ignoreConsumerException() {
+    void ignoreConsumerException() {
         Arrays.asList("one", "two", "three").forEach(ExceptionUtils.ignoreExceptionInConsumer(e -> throwException(), Exception.class));
     }
 
-    @Test(expected = RuntimeException.class)
-    public void wrapConsumerException() {
-        Arrays.asList("one", "two", "three").forEach(ExceptionUtils.wrapExceptionInConsumer(e -> throwException()));
+    @Test
+    void wrapConsumerException() {
+        assertThrows(RuntimeException.class, () ->
+                Arrays.asList("one", "two", "three").forEach(ExceptionUtils.wrapExceptionInConsumer(e -> throwException())));
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     @Test
-    public void ignoreFunctionExceptionUsingOptional() {
-        Arrays.asList("one", "two", "three").stream()
+    void ignoreFunctionExceptionUsingOptional() {
+        Stream.of("one", "two", "three")
                 .map(ExceptionUtils.ignoreExceptionInFunctionReturningOptional(e -> throwExceptionInsteadOfReturningOptional(), Exception.class))
-                .peek(e -> Assert.assertFalse(e.isPresent()))
+                .peek(e -> assertFalse(e.isPresent()))
                 .collect(Collectors.toList());
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     @Test
-    public void ignoreFunctionException() {
-        Arrays.asList("one", "two", "three").stream()
+    void ignoreFunctionException() {
+        Stream.of("one", "two", "three")
                 .map(ExceptionUtils.ignoreExceptionInFunction(e -> throwExceptionInsteadOfReturning(), Exception.class))
-                .peek(e -> Assert.assertNull(e))
+                .peek(Assertions::assertNull)
                 .collect(Collectors.toList());
     }
 
-    @Test(expected = RuntimeException.class)
-    public void wrapFunctionException() {
-        Arrays.asList("one", "two", "three").stream()
-                .map(ExceptionUtils.wrapExceptionInFunction(e -> throwExceptionInsteadOfReturning()))
-                .collect(Collectors.toList());
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    @Test
+    void wrapFunctionException() {
+        assertThrows(RuntimeException.class, () ->
+                Stream.of("one", "two", "three")
+                        .map(ExceptionUtils.wrapExceptionInFunction(e -> throwExceptionInsteadOfReturning()))
+                        .collect(Collectors.toList()));
     }
 }
